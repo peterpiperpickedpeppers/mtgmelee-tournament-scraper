@@ -1,1 +1,43 @@
+# --- Python Bytecode ---
+__pycache__/
+*.py[cod]
+*.pyo
+
+# --- Spyder-specific files ---
+.spyderproject
+.spyproject
+.spyderworkspace
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Data outputs ---
 data/
+*.csv
+*.tsv
+*.parquet
+*.h5
+*.json
+*.log
+
+# --- Environment files ---
+.env
+.env.*
+.venv/
+venv/
+env/
+*.conda
+*.yml
+
+# --- OS & IDE junk ---
+.DS_Store
+Thumbs.db
+
+# --- VS Code (if used) ---
+.vscode/
+
+# --- Logs, caches, other ---
+*.log
+*.tmp
+*.bak
+*.swp
