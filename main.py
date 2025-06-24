@@ -49,7 +49,7 @@ def run_tournament_scraper():
         browser.close_browser()
         CONFIG.browser_instance = None
     
-    # scripts that don't need the broswer
+    # scripts that don't need the browser
     create_archetypes_results()
     create_archetypes_matchups()
     create_archetype_winrates()
