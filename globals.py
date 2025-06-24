@@ -41,7 +41,7 @@ class TournamentConfig:
         
     def reset(self):
         """Reset all values to None (useful for rerunning initialization)."""
-        self.__init()
+        self.__init__()
     
 # singleton instance of the config
 CONFIG = TournamentConfig()
