@@ -31,7 +31,7 @@ def run_decklists_scraper():
     # load deckIDs column from standings csv and convert to a list
     # then reload standings for later use
     standings = pd.read_csv(standingsPath, usecols=['deck id'])
-    deck_ids = standings['deck id'].astype(str).tolist()#[:3]
+    deck_ids = standings['deck id'].astype(str).tolist()
     standings = pd.read_csv(standingsPath)
     
     # for each Deck ID, navigate to URL and scrape data
