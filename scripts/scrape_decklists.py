@@ -36,32 +36,57 @@ def run_decklists_scraper():
     for row in deck_ids:
         deckURL = os.path.join(CONFIG.decklistURL, row)
         driver.get(deckURL)
-                
-        # Wait for the player name element to ensure the page has loaded
+        
         WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "decklist-card-title-author"))
+            EC.presence_of_element_located((By.CLASS_NAME, "decklist-profile-image"))
         )
         
-        # extract player name
-        player_element = driver.find_element(By.CLASS_NAME, "decklist-card-title-author").find_element(By.TAG_NAME, "a")
-        player_name = player_element.text
-    
+        player_name = driver.find_element(By.XPATH, "//a[contains(@href, '/Profile')]/span[@class='text-nowrap']").text
+
+        def normalize_player_name(name):
+            name = name.strip()
+            if "," in name:
+                # Likely a real name in "Last, First" format
+                parts = name.split(",", 1)
+                last = parts[0].strip()
+                first = parts[1].strip()
+                return f"{first} {last}"
+            else:
+                # Likely a handle or already-normalized
+                return name
+
+        player_name = normalize_player_name(player_name)
+
         # extract archetype
-        archetype_element = driver.find_element(By.CLASS_NAME, "decklist-card-title")
+        archetype_element = driver.find_element(By.CLASS_NAME, "decklist-title")
         archetype = archetype_element.text
     
-        # Locate the button containing the decklist
-        button = driver.find_element(By.CLASS_NAME, "decklist-builder-copy-button")
-    
-        # Extract the decklist from the "data-clipboard-text" attribute
-        decklist_text = button.get_attribute("data-clipboard-text")
-    
-        # split the decklist into maindeck and sideboard
-        sections = decklist_text.split("Sideboard")
-    
-        main_deck_lines = sections[0].strip().split("\n")[1:]
-        sideboard_lines = sections[1].strip().split("\n") if len(sections) > 1 else []
-    
+        # Find all category blocks
+        categories = driver.find_elements(By.CLASS_NAME, "decklist-category")
+        
+        main_deck_lines = []
+        sideboard_lines = []
+        
+        for category in categories:
+            # Get the section title, e.g., "Planeswalker (2)", "Sideboard (15)"
+            title_element = category.find_element(By.CLASS_NAME, "decklist-category-title")
+            title_text = title_element.text.strip()
+        
+            # Determine whether we're in the main deck or sideboard
+            is_sideboard = title_text.lower().startswith("sideboard")
+        
+            # Find all records in this category
+            records = category.find_elements(By.CLASS_NAME, "decklist-record")
+        
+            for record in records:
+                qty = record.find_element(By.CLASS_NAME, "decklist-record-quantity").text.strip()
+                name = record.find_element(By.CLASS_NAME, "decklist-record-name").text.strip()
+                line = f"{qty} {name}"
+                if is_sideboard:
+                    sideboard_lines.append(line)
+                else:
+                    main_deck_lines.append(line)
+                    
         # function for parsing card entries into quantity and card name
         def parse_cards(lines):
             cards = []
@@ -93,8 +118,13 @@ def run_decklists_scraper():
         
         # concat with bigger df
         all_decklists_df = pd.concat([all_decklists_df, decklist_df], ignore_index=True)
-    
+        
+        print(all_decklists_df)
+        
     # save all decklists
     save_df(all_decklists_df, filePath)
+<<<<<<< Updated upstream
     
     print("Decklists scraped.")
+=======
+>>>>>>> Stashed changes
