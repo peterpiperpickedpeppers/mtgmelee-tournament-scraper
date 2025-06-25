@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Utility functions for working with dataframes, lists, and more.
-
+@author: peterpiperpickedpeppers
+Description: Common data loading and saving utilities.
 """
 
 import pandas as pd

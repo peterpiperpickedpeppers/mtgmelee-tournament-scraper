@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Feb 23 16:38:32 2025
-
-@author: jjwey
+@author: peterpiperpickedpeppers
+Description: Manages Chrome browser setup and navigation.
 """
-
 from selenium import webdriver
 import chromedriver_autoinstaller
 from selenium.webdriver.chrome.service import Service

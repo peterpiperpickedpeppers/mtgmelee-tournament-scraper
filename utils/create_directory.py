@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Utility function for creating the tournament directory.
-
+@author: peterpiperpickedpeppers
+Description: Creates the event data folder within the project.
 """
 
 from pathlib import Path

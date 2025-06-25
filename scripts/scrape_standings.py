@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Standings scraper for the mtgmelee website.
-
+@author: peterpiperpickedpeppers
+Description: Scrapes tournament standings from MTGMelee.
 """
 
 # set up workspace

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Functions for working with Selenium.
-
+@author: peterpiperpickedpeppers
+Description: Helpers for common Selenium interactions.
 """
 
 from selenium.webdriver.common.by import By

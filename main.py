@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Main script for running Project Code end to end.
-
+@author: peterpiperpickedpeppers
+Description: Runs the tournament scraping workflow.
 """
 
 from dotenv import load_dotenv

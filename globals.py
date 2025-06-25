@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
-
-"""Defines global values to be passed through subsequent scripts."""
+"""
+@author: peterpiperpickedpeppers
+Description: Defines global config values shared across scripts.
+"""
 
 from utils.create_directory import create_tournament_folder
 import os

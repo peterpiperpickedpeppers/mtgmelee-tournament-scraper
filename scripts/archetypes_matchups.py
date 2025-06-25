@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Mar 19 21:05:39 2023
-
-@author: jjwey
+@author: peterpiperpickedpeppers
+Description: Creates win/loss statistics for archetype matchups.
 """
-
 import pandas as pd
 import numpy as np
 import os
