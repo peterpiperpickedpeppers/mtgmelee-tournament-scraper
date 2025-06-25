@@ -4,7 +4,6 @@
 Description: Runs the tournament scraping workflow.
 """
 
-from dotenv import load_dotenv
 from globals import CONFIG
 from utils.browser_manager import BrowserManager
 from scripts.scrape_standings import run_standings_scraper
@@ -13,9 +12,6 @@ from scripts.scrape_decklists import run_decklists_scraper
 from scripts.archetypes_results import create_archetypes_results
 from scripts.archetypes_matchups import create_archetypes_matchups
 from scripts.archetypes_winrates import create_archetype_winrates
-
-# load environment variables
-load_dotenv()
 
 def run_tournament_scraper():
     """Runs the tournament scraper scripts in order after input from user."""
@@ -41,7 +37,6 @@ def run_tournament_scraper():
         # scripts that use the browser
         run_standings_scraper()
         run_pairings_scraper()
-        input()
         run_decklists_scraper()
     
     finally:
