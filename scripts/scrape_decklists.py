@@ -123,8 +123,5 @@ def run_decklists_scraper():
         
     # save all decklists
     save_df(all_decklists_df, filePath)
-<<<<<<< Updated upstream
     
     print("Decklists scraped.")
-=======
->>>>>>> Stashed changes
