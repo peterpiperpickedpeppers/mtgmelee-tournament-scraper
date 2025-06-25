@@ -29,6 +29,8 @@ Occasionally (it's pretty rare) a Melee event won't close out properly for a cou
 
 Some events have horrible decklists names. If it's an RC or a PT, Frank Karsten / Somebody will usually update the names as the event goes on or shortly thereafter. If they don't update them the winrates will be useless and you'll have to do some manual editing yourself with the csvs (like you'll need to merge the csv files for an archetype - Dimir Midrange, Dimir Aggro, Dimir Tempo). Then run the results / matchups / winrates functions again and they'll work their magic.
 
+Unfortunately when Melee updated a year or so ago it killed all decklists from older events so running this on just any old tournament won't work. I haven't tracked this perfectly but it feels like decklists may get pulled from events with some regularity (data presumably being expensive to hold forever).
+
 # Roadmap
 I'm still new to Python and coding so some of the above can be done easier / more efficiently / in cooler ways. There's an mtgmelee API but I couldn't figure out how to get access to it (and I discovered it near the end of this project and didn't want to fight too hard to figure it out). If you acccess the API, the above is much easier and will not require any webdriving.
 
