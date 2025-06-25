@@ -1,14 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Feb 23 14:58:06 2025
-
-@author: jjwey
-"""
-
-"""
-
-initialize packages to make it easier to call them in subsequent scrips
-
+@author: peterpiperpickedpeppers
+Description: Simplifies imports for helper modules.
 """
 
 from utils.browser_manager import BrowserManager

@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Feb 19 19:18:47 2025
-
-@author: jjwey
+@author: peterpiperpickedpeppers
+Description: Scrapes player decklists from MTGMelee.
 """
-
 # set up workspace
 from time import sleep
 from selenium.webdriver.common.by import By

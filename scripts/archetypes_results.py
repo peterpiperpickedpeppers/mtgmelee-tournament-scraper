@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Mar 19 11:30:39 2023
-
-@author: jjwey
+@author: peterpiperpickedpeppers
+Description: Generates results files for each archetype.
 """
-
 import pandas as pd
 import os
 from globals import CONFIG

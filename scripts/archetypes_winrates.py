@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Use matchups data to determine global archetype winrates.
+@author: peterpiperpickedpeppers
+Description: Calculates overall win rates using matchup results.
 """
 
 import os

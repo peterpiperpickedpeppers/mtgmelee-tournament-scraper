@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Pairings scraper for the mtgmelee website.
-
+@author: peterpiperpickedpeppers
+Description: Scrapes tournament pairings from MTGMelee.
 """
 
 # set up workspace
