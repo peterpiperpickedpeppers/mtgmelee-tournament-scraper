@@ -47,19 +47,3 @@ class TournamentConfig:
     
 # singleton instance of the config
 CONFIG = TournamentConfig()
-
-
-"""
-
-How To Use In Scripts:
-    
-    # importing them:
-    from globals import CONFIG
-    
-    # using them
-    CONFIG.browser_instance.get(URL)
-    
-    # updating them
-    CONFIG.tournamentID = "123456"
-
-"""
