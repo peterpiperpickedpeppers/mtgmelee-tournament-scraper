@@ -8,10 +8,11 @@ from globals import CONFIG
 from utils.browser_manager import BrowserManager
 from scripts.scrape_standings import run_standings_scraper
 from scripts.scrape_pairings import run_pairings_scraper
-from scripts.scrape_decklists import run_decklists_scraper
+#from scripts.scrape_decklists import run_decklists_scraper
 from scripts.archetypes_results import create_archetypes_results
 from scripts.archetypes_matchups import create_archetypes_matchups
 from scripts.archetypes_winrates import create_archetype_winrates
+from scripts.new_scrape_decklists import run_decklists_scraper
 
 def run_tournament_scraper():
     """Runs the tournament scraper scripts in order after input from user."""
@@ -53,3 +54,8 @@ def run_tournament_scraper():
     
 if __name__ == "__main__":
     run_tournament_scraper()
+
+
+
+
+

@@ -78,7 +78,7 @@ def archetype_card_copy_winrates(
 # --- usage ---
 df = pd.read_csv(decklist_path)
 
-archetype = "Izzet Affinity"
+archetype = "Simic Neoform"
 tbl = archetype_card_copy_winrates(
     df,
     archetype=archetype,
@@ -87,7 +87,10 @@ tbl = archetype_card_copy_winrates(
     max_copies_cap=4
     )
 
-# save
-save_path2 = fr"C:\Users\jjwey\OneDrive\Desktop\Repositories\MTGMelee-Tournament-Scraper\data\PT Edge of Eternities 2025/{archetype} per card per copy winrates.csv"
+# save (main only)
+#save_path2 = fr"C:\Users\jjwey\OneDrive\Desktop\Repositories\MTGMelee-Tournament-Scraper\data\PT Edge of Eternities 2025/card winrates/{archetype} per card per copy winrates.csv"
+
+# side only
+save_path2 = fr"C:\Users\jjwey\OneDrive\Desktop\Repositories\MTGMelee-Tournament-Scraper\data\PT Edge of Eternities 2025/card winrates/{archetype} per card per copy winrates SIDEBOARD.csv"
 
 tbl.to_csv(save_path2, index=False)
